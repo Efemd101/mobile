@@ -1,0 +1,104 @@
+{
+  "expo": {
+    "name": "Zylo",
+    "slug": "zylo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zylo.app",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "fetch",
+          "remote-notification",
+          "background-processing"
+        ],
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSExceptionDomains": {
+            "zylo.vet": {
+              "NSExceptionAllowsInsecureHTTPLoads": true,
+              "NSExceptionMinimumTLSVersion": "TLSv1.0",
+              "NSIncludesSubdomains": true
+            }
+          }
+        },
+        "UIRequiredDeviceCapabilities": [
+          "armv7"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.zylo.mobile",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "NOTIFICATIONS",
+        "FOREGROUND_SERVICE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK"
+      ],
+      "useNextNotificationsApi": true,
+      "config": {
+        "cleartextTraffic": true
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./assets/notification_sound.wav"
+          ],
+          "androidMode": "default",
+          "androidCollapsedTitle": "Zylo",
+          "iosDisplayInForeground": true
+        }
+      ],
+      [
+        "expo-background-fetch",
+        {
+          "startOnBoot": true
+        }
+      ],
+      [
+        "expo-task-manager",
+        {
+          "taskName": "BACKGROUND_NOTIFICATION_TASK",
+          "frequency": "minimal"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "833eb67f-e62d-44ad-984f-d383f918ef96"
+      }
+    }
+  }
+}
